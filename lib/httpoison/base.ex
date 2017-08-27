@@ -397,7 +397,12 @@ defmodule HTTPoison.Base do
   end
 
   defp build_hackney_options(module, options) do
-    timeout = Keyword.get options, :timeout
+	IO.inspect options
+	#timeout = Keyword.get options, :timeout
+	timeout = :infinity
+	IO.inspect "timeout hackney  ==== ivan ==== : #{timeout}"
+
+    # timeout = Keyword.get options, :timeout
     recv_timeout = Keyword.get options, :recv_timeout
     stream_to = Keyword.get options, :stream_to
     async = Keyword.get options, :async
