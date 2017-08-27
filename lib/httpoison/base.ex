@@ -397,7 +397,7 @@ defmodule HTTPoison.Base do
   end
 
   defp build_hackney_options(module, options) do
-	timeout         = options[:params][:timeout]
+    timeout         = options[:params][:timeout]
     recv_timeout    = options[:params][:recv_timeout]
     stream_to       = options[:params][:stream_to]
     async           = options[:params][:async]
