@@ -397,20 +397,15 @@ defmodule HTTPoison.Base do
   end
 
   defp build_hackney_options(module, options) do
-	IO.inspect options
-	#timeout = Keyword.get options, :timeout
-	timeout = :infinity
-	IO.inspect "timeout hackney  ==== ivan ==== : #{timeout}"
-
-    # timeout = Keyword.get options, :timeout
-    recv_timeout = Keyword.get options, :recv_timeout
-    stream_to = Keyword.get options, :stream_to
-    async = Keyword.get options, :async
-    proxy = Keyword.get options, :proxy
-    proxy_auth = Keyword.get options, :proxy_auth
-    ssl = Keyword.get options, :ssl
-    follow_redirect = Keyword.get options, :follow_redirect
-    max_redirect = Keyword.get options, :max_redirect
+	timeout         = options[:params][:timeout]
+    recv_timeout    = options[:params][:recv_timeout]
+    stream_to       = options[:params][:stream_to]
+    async           = options[:params][:async]
+    proxy           = options[:params][:proxy]
+    proxy_auth      = options[:params][:proxy_auth]
+    ssl             = options[:params][:ssl]
+    follow_redirect = options[:params][:follow_redirect]
+    max_redirect    = options[:params][:max_redirect]
 
     hn_options = Keyword.get options, :hackney, []
 
